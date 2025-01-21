@@ -24,6 +24,7 @@ jobs:
       # 3. Package Helm Chart
       - name: Package Helm Chart
         run: |
+          cd helm-chart
           helm package .  
           mkdir -p charts
           mv *.tgz ./charts/
