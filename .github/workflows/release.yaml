@@ -25,6 +25,7 @@ jobs:
       - name: Package Helm Chart
         run: |
           helm package .  
+          mkdir -p charts
           mv *.tgz ./charts/
 
       # 4. Generate index.yaml
