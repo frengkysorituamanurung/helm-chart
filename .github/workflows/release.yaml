@@ -3,7 +3,7 @@ name: Release Helm Chart
 on:
   push:
     branches:
-      - main  # Jalankan hanya pada branch 'main'
+      - main  
 
 jobs:
   release:
@@ -19,12 +19,12 @@ jobs:
       - name: Set up Helm
         uses: azure/setup-helm@v3
         with:
-          version: v3.12.0  # Ganti dengan versi Helm yang ingin digunakan
+          version: v3.12.0  
 
       # 3. Package Helm Chart
       - name: Package Helm Chart
         run: |
-          helm package .  # Ganti 'helm-chart' dengan nama folder chart Anda
+          helm package .  
           mv *.tgz ./charts/
 
       # 4. Generate index.yaml
