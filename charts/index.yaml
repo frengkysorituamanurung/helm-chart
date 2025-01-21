@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  helm-chart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-01-21T07:19:10.783888405Z"
+    description: A Helm chart for Kubernetes
+    digest: 949799e718a69697b6fd6acf2c90864bb36da1d15d8007dd11a4c4a552becbd8
+    name: helm-chart
+    type: application
+    urls:
+    - https://frengkysorituamanurung.github.io/helm-chart/helm-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-01-21T07:19:10.78327462Z"
