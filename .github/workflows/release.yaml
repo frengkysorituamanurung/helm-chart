@@ -22,22 +22,13 @@ jobs:
           echo "Listing files:"
           ls -R
 
-      # # Package Helm Chart
-      # - name: Package Helm Chart
-      #   working-directory: helm-chart
-      #   run: |
-      #     helm package .
-      #     mkdir -p ../charts
-      #     mv *.tgz ../charts/
-
-      - name: Run Helm commands
+      # Package Helm Chart
+      - name: Package Helm Chart
+        working-directory: helm-chart
         run: |
-          mkdir -p helm-chart
-          cd helm-chart
           helm package .
-          mkdir -p charts
-          mv *.tgz ./charts/
-        shell: bash
+          mkdir -p ../charts
+          mv *.tgz ../charts/
 
       # 4. Generate index.yaml
       - name: Generate index.yaml
