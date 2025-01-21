@@ -43,12 +43,19 @@ jobs:
           git add charts/
           git commit -m "ci: update index.yaml and release Helm chart"
           git push origin main
+        
+      - name: Create Tag
+        run: |
+          VERSION="v0.1.$(date +%s)"
+          echo "Tag: $VERSION"
+          git tag -a $VERSION -m "Release $VERSION"
+          git push origin $VERSION
 
       # 6. Create Release
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:
           artifacts: charts/*.tgz
-          tag: ${{ github.sha }}
-          name: "Helm Chart Release ${{ github.sha }}"
+          tag: $VERSION
+          name: "Helm Chart Release $VERSION"
           token: ${{ secrets.GITHUB_TOKEN }}
